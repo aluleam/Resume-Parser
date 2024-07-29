@@ -15,16 +15,16 @@ The Resume Parser is a Python-based tool designed to extract and organize key in
 - spacy
 - logging
 
-    ```
-2. Change to the project directory:
+  pip install -r requirements.txt
+1. Change to the project directory:
     ```bash
     cd Resume-Parser
     ```
-3. Create a virtual environment:
+2. Create a virtual environment:
     ```bash
     python3 -m venv .venv
     ```
-4. Activate the virtual environment:
+3. Activate the virtual environment:
     - On Windows:
         ```bash
         .venv\Scripts\activate
@@ -33,7 +33,7 @@ The Resume Parser is a Python-based tool designed to extract and organize key in
         ```bash
         source .venv/bin/activate
         ```
-5. Install the required packages:
+4. Install the required packages:
     ```bash
     pip install -r requirements.txt
     ```
