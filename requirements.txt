@@ -1,0 +1,4 @@
+pdfplumber
+spacy
+pandas
+logging
