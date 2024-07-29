@@ -1,53 +1,47 @@
-# Resume-Parser
+# Resume Parser
 
-## Overview
-The Resume Parser is a Python application designed to extract and process key information from resume PDF files. It uses Natural Language Processing (NLP) with spaCy and PDF processing with pdfplumber to accurately extract details such as name, email, phone number, education, work experience, and technical skills. The extracted information is displayed in a user-friendly format and saved to an Excel file for further use.
+## Description
+The Resume Parser is a Python-based tool designed to extract and organize key information from resumes in PDF format. It uses regex and basic text processing techniques to identify and categorize essential data such as name, email, phone number, education, work experience, skills, certifications, awards, projects, and languages.
 
 ## Features
-- Extracts and processes text from PDF resumes
-- Identifies and extracts key information:
-  - Name
-  - Email
-  - Phone number
-  - Education
-  - Work experience
-  - Technical skills
-- Displays extracted information in a readable format
-- Saves extracted information to an Excel file
+- Extracts text from PDF resumes.
+- Identifies and categorizes key information using regex.
+- Displays the extracted information in a readable format.
 
 ## Requirements
 - Python 3.x
 - pandas
 - pdfplumber
 - spacy
-- pdfminer.six
-- openpyxl
+- logging
 
-## Installation
-1. **Clone the repository:**
-    ```bash
-    git clone https://github.com/aluleam/resume-parser.git
-    cd resume-parser
     ```
-
-2. **Create and activate a virtual environment:**
+2. Change to the project directory:
+    ```bash
+    cd Resume-Parser
+    ```
+3. Create a virtual environment:
     ```bash
     python3 -m venv .venv
-    source .venv/bin/activate
     ```
-
-3. **Install the required packages:**
+4. Activate the virtual environment:
+    - On Windows:
+        ```bash
+        .venv\Scripts\activate
+        ```
+    - On macOS and Linux:
+        ```bash
+        source .venv/bin/activate
+        ```
+5. Install the required packages:
     ```bash
     pip install -r requirements.txt
-    python -m spacy download en_core_web_sm
     ```
 
 ## Usage
-1. **Run the script:**
+1. Run the script:
     ```bash
     python main.py
     ```
+2. Enter the exact path of your resume when prompted.
 
-2. **Follow the prompt to enter the path of your resume PDF:**
-    ```plaintext
-    Enter the exact path of your resume: /path/to/your/resume.pdf
