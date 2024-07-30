@@ -1,4 +1,2 @@
 pdfplumber
 spacy
-pandas
-logging
