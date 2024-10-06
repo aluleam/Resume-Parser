@@ -98,7 +98,6 @@ def extract_information(text):
         text, re.DOTALL | re.IGNORECASE)
     data['Projects'] = projects_match.group(1).strip() if projects_match else 'N/A'
 
-    # Extract languages
     languages_match = re.search(
         r'LANGUAGES(.*?)(?=(EXPERIENCE|WORK EXPERIENCE|EDUCATION|TECHNICAL SKILLS|CERTIFICATIONS|PROJECTS|AWARDS|$))',
         text, re.DOTALL | re.IGNORECASE)
