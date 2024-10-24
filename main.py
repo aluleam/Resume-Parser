@@ -8,7 +8,7 @@ import logging  # Keeps track of program events
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logging.getLogger('pdfminer').setLevel(logging.ERROR)
 
-nlp = spacy.load('en_core_web_sm') #Loads the SpaCy language model
+nlp = spacy.load('en_core_web_sm')
 
 #Function for extracting the text from the resume
 def extract_text(file_path):
