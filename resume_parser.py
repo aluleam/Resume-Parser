@@ -6,7 +6,7 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from docx import Document
-import PyPDF2
+import pdfplumber
 from collections import defaultdict
 import logging
 from pdf2image import convert_from_path
@@ -32,17 +32,19 @@ def load_nlp_models():
 
 # Step 3: Extract Text from Resumes
 def extract_text_from_pdf(pdf_path):
-    """Extract text from a PDF file."""
+    """Extract text from a PDF file using pdfplumber."""
     try:
-        with open(pdf_path, "rb") as file:
-            reader = PyPDF2.PdfReader(file)
+        with pdfplumber.open(pdf_path) as pdf:
             text = ""
-            for page in reader.pages:
+            for page in pdf.pages:
                 text += page.extract_text()
         if not text.strip():  # If no text is extracted, assume it's a scanned PDF
             logging.info("No text extracted from PDF. Attempting OCR.")
             text = extract_text_from_scanned_pdf(pdf_path)
         return text
+    except FileNotFoundError as e:
+        logging.error(f"File not found: {e}")
+        raise
     except Exception as e:
         logging.error(f"Error extracting text from PDF: {e}")
         raise
@@ -67,6 +69,9 @@ def extract_text_from_docx(docx_path):
         for paragraph in doc.paragraphs:
             text += paragraph.text + "\n"
         return text
+    except FileNotFoundError as e:
+        logging.error(f"File not found: {e}")
+        raise
     except Exception as e:
         logging.error(f"Error extracting text from DOCX: {e}")
         raise
