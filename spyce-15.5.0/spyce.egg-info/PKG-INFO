@@ -1,0 +1,23 @@
+Metadata-Version: 2.2
+Name: spyce
+Version: 15.5.0
+Summary: Python CFFI bindings for FreeBSD's Capsicum sandboxing framework.
+Author: Mark Williams
+Author-email: markrwilliams@gmail.com
+Requires-Dist: cffi>=1.0.1
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: requires-dist
+Dynamic: summary
+
+
+    Spyce
+    ~~~~~~~
+
+    Python CFFI bindings for FreeBSD's Capsicum sandboxing framework.
+
+
+    :copyright: (c) 2015 by Mark Williams
+    :license: BSD, see LICENSE for more details.
+
